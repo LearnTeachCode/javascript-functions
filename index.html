@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Learn to Code LA JavaScript Functions</title>
+
+		<meta name="description" content="A Learn to Code LA JavaScript workshop by Liz Krane for anyone completely new to programming">
+		<meta name="author" content="Liz Krane">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<p>Learn to Code LA</p>
+					<h3>Beginner's JavaScript Workshop:<br>
+					Fun with Functions!</h3>
+					<a href="https://xkcd.com/221/"><img src="http://imgs.xkcd.com/comics/random_number.png"></a>       
+					<p>
+                        <small>Created by Liz Krane (<a href="http://twitter.com/LearningNerd">@LearningNerd</a>) <br>for <strong><a href="http://www.meetup.com/LearnToCodeLA/">Learn to Code LA</a></strong> (<a href="http://twitter.com/LearningNerd">@LearnToCodeLA</a>)</small></p>                        
+                        <p><small>Slides: ***githublink***</small></p>
+				</section>
+
+				       <section>
+                       <h2>What is a function?</h2>
+				           <a href="https://en.wikipedia.org/wiki/Function_(mathematics)"><img style="background:#fff;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Function_machine2.svg/485px-Function_machine2.svg.png"></a>
+				       </section>
+				       
+				       <section>
+                       <h2>What is a function?</h2>				           
+				           <p></p>"a piece of program wrapped in a value" - <a href="http://eloquentjavascript.net/02_program_structure.html">Eloquent JavaScript</a></p>
+				               <p>A <a href="https://en.wikipedia.org/wiki/Black_box">"black box"</a> that turns one thing into another thing</p>
+				               <p>"a relation that associates an input to a single output according to some rule." - <a href="https://en.wikipedia.org/wiki/Function">Wikipedia</a></p>
+				           </ul>
+				       </section>
+				       
+				       <section>
+				       <h2>JavaScript syntax for functions</h2>
+				           <pre><code class="hljs" data-trim contenteditable>
+// Step 1. Define the function
+var getRandomNumber = function() {    
+    return 4;
+}
+
+// Step 2. Call the function
+getRandomNumber();
+
+// Use the output for other stuff!
+console.log( getRandomNumber() ); // like this!
+var myNum = getRandomNumber(); // or this!
+console.log( getRandomNumber() + 5 ); // or even this!
+                          
+					    </code></pre>
+				       </section>
+
+                        <section>
+				       <h2>Return values and side effects</h2>
+				           <pre><code class="hljs" data-trim contenteditable>
+// Function with return statement
+var getRandomNumber = function() {
+    return 4;
+}
+
+// Function that relies on side effects
+var getRandomNumber = function() {
+    console.log("4. Chosen by fair dice roll.");
+}                                                                            
+					    </code></pre>
+				       </section>               
+                
+                        <section>
+				       <h2>Return values and side effects</h2>
+				           <a href="https://xkcd.com/1312/"><img src="http://imgs.xkcd.com/comics/haskell.png"></a>
+                            <p><small><a href="http://www.explainxkcd.com/wiki/index.php/1312:_Haskell">Explanation of the joke</a> / Further reading: <br><a href="https://en.wikipedia.org/wiki/Side_effect_(computer_science)">Wikipedia</a>, <a href="http://stackoverflow.com/questions/763835/are-side-effects-a-good-thing">StackOverflow</a>, <a href="http://programmers.stackexchange.com/questions/15269/why-are-side-effects-considered-evil-in-functional-programming">Programmers Stack Exchange</a></small></p>
+				       </section>  
+                
+					<section>
+				       <h2>Defining functions with parameters</h2>
+				           <pre><code class="hljs" data-trim contenteditable>
+// Function with no parameters
+var myUselessFunction = function() {
+    
+}
+
+// One parameter
+var myUselessFunction = function(myParameter) {
+    
+}
+
+// Five parameters
+var myUselessFunction = function(a,b,c,d,e) {
+    
+}                                                                                
+					    </code></pre>
+				       </section>
+                   
+                   <section>
+				       <h2>Calling functions with arguments</h2>
+				           <pre><code class="hljs" data-trim contenteditable>
+// Defining the function with five parameters
+var concatenateFiveStrings = function(a,b,c,d,e) {
+    console.log(a + b + c + d + e);
+}
+
+// Calling the function with five arguments
+concatenateFiveStrings("Hi", "my", "name", "is", "Liz");
+
+// Output in the console: HimynameisLiz                                                                                                                                                                                                                                                                                                                                                                                                     
+					    </code></pre>
+				       </section>
+                    
+                    <section>
+				       <h2>Built-in JavaScript functions</h2>
+				           <pre><code class="hljs" data-trim contenteditable>
+// Console.log, my favorite!
+console.log("Hi, I'm a built-in function!");
+
+// A REAL random number function
+Math.random();
+					    </code></pre>
+                   
+                   <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">See the MDN Reference page for a list</a>, or just Google stuff to find all the built-in functions. Gotta call 'em all!</p>
+				       </section>
+                    
+                    <section>
+				       <h2>Let's talk about scope!</h2>				           
+                   <p>Things that are outside the scope of this presentation:</p>
+                   <ul>
+                       <li>Quantum mechanics</li>
+                       <li>How to bake a souffle</li>
+                       <li>Bungee trampolines, my favorite new thing!</li>
+                   </ul>
+                   
+                   <p><strong><a href="https://en.wikipedia.org/wiki/Scope_(computer_science)">Scope</a></strong> in computer science: "the range in which a variable can be referenced" - <a href="https://en.wikipedia.org/wiki/Scope">Wikipedia</a></p>
+				       </section>
+                    
+                    <section>
+				       <h2>Scope in JavaScript</h2>
+				           <pre><code class="hljs" data-trim contenteditable>
+// We start in the global scope! Global variables can be used anywhere.
+var globalVar = "This example will work!";
+
+// Define a function                  
+var testScope = function() { 
+    // This will work because globalVar belongs to the global scope
+    console.log(globalVar);
+}
+// Call the function, and it works!
+testScope();             
+					    </code></pre>
+				       </section>
+                   
+                   <section>
+				       <h2>Scope in JavaScript</h2>
+				           <pre><code class="hljs" data-trim contenteditable>
+// Let's try another example. Define a function:
+var testScope = function() { 
+    // Functions have their own local scope!
+    var localVar = "This example won't work!";
+}
+
+// This will give an error because localVar only exists
+// inside the function in which it was declared:
+console.log(localVar);
+                  
+// Calling the function won't fix it:
+testScope();
+console.log(localVar); // still won't work                                                        
+                   
+                                                            
+					    </code></pre>
+				       </section>
+                   
+                   <section>
+				       <h2>Scope in JavaScript</h2>
+                       <p><small>Just like the word "scope" has multiple meanings in English depending on the context (like variable scope in programming or tele<em>scopes</em> in astronomy), variables in JavaScript can have different values within different scopes.</small></p>
+				           <pre><code class="hljs" data-trim contenteditable>
+// Define a function:
+var myVariable = "This belongs to the GLOBAL scope!";
+
+var testScope = function() { 
+    var myVariable = "This belongs to the LOCAL scope!";
+    console.log(myVariable);
+}
+
+// Compare these two results:
+testScope();
+console.log(myVariable);
+                                                                        
+                   
+                                                            
+					    </code></pre>
+				       </section>
+                   
+                   <section>
+				       <h2>Scope in JavaScript</h2>
+                       <p><small>Now let's change one tiny detail -- we'll remove the "var" keyword from inside our <em>testScope</em> function. See what happens:</small></p>
+				           <pre><code class="hljs" data-trim contenteditable>
+// Define a function:
+var myVariable = "This belongs to the GLOBAL scope!";
+
+var testScope = function() { 
+    // Notice we removed the var keyword in the line below:
+    myVariable = "This belongs to the LOCAL scope!";
+    console.log(myVariable);
+}
+
+// Compare these two results:
+testScope();
+console.log(myVariable);
+// Without the "var" keyword, we're CHANGING the global variable
+// instead of creating a new local variable.                             
+					    </code></pre>
+				       </section>
+                   
+                   <section>
+				       <h2>Scope in JavaScript</h2>
+                       <p>"By treating function-local variables as existing only within the function, the language makes it possible to read and understand functions as small universes, without having to worry about all the code at once."-- <a href="http://eloquentjavascript.net/03_functions.html">Eloquent JavaScript</a></p>				           
+				       </section>
+                    
+                     <section>
+				       <h2>Different ways to define functions</h2>
+				           <pre><code class="hljs" data-trim contenteditable>
+// Function expression (anonymous function)
+var getRandomNumber = function() {
+    console.log("4. Chosen by fair dice roll.");
+}
+
+// Function declaration
+function getRandomNumber() {
+    console.log("4. Chosen by fair dice roll.");
+}
+
+// Named function expression
+var getRandomNumber = function getRandomNumber() {
+    console.log("4. Chosen by fair dice roll.");
+}    
+
+// Bonus: immediately-invoked function expression (IIFE)
+(function getRandomNumber() {
+    console.log("4. Chosen by fair dice roll.");
+})();
+					    </code></pre>
+				       </section>
+                   
+                       <section>
+				       <h2>Now for a challenge:</h2>
+				           <pre><code class="hljs" data-trim contenteditable>
+// Challenge 1: What will be the output of this function?
+function foo(){
+    var bar = function() {
+        return 3;
+    };
+    return bar();
+    var bar = function() {
+        return 8;
+    };
+}
+alert(foo());
+					    </code></pre>
+                       <pre><code class="hljs" data-trim contenteditable>
+// Challenge 2: What about this one?
+function foo(){
+    function bar() {
+        return 3;
+    }
+    return bar();
+    function bar() {
+        return 8;
+    }
+}
+alert(foo());
+					    </code></pre>
+				       </section>
+                    
+                        <section>
+                        <p><small>Variable and function declarations are executed first -- "hoisted" to the top. "Variable Declarations get hoisted but their Assignment Expressions don’t." - <a href="https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/">See problem/explanation here</a> </small></p>				       
+				           <pre><code class="hljs" data-trim contenteditable>
+// Challenge 1 -- How we wrote the code:
+function foo() {
+    var bar = function() {
+        return 3;
+    };
+    return bar();
+    var bar = function() {
+        return 8;
+    };
+}
+alert(foo());
+					    </code></pre>
+				           <pre><code class="hljs" data-trim contenteditable>
+// Challenge 1 -- How the code is actually executed:
+function foo() {
+    // A declaration for each function expression
+    var bar = undefined;
+    var bar = undefined;
+    // First Function Expression is executed
+    bar = function() {
+        return 3;
+    };
+    // Function created by first Function Expression is invoked
+    return bar();
+    // Second Function Expression unreachable
+}
+alert(foo()); // 3
+					    </code></pre>                     
+				       </section>
+                    
+                    <section>				       				           
+				           <pre><code class="hljs" data-trim contenteditable>
+// Challenge 2 -- How we wrote the code:
+function foo(){
+    function bar() {
+        return 3;
+    }
+    return bar();
+    function bar() {
+        return 8;
+    }
+}
+alert(foo());
+					    </code></pre>
+				           <pre><code class="hljs" data-trim contenteditable>
+// Challenge 2 -- How the code is actually executed:
+function foo() {
+    // Define bar once
+    function bar() {
+        return 3;
+    }
+    // Redefine it
+    function bar() {
+        return 8;
+    }
+    // Return its invocation
+    return bar(); // 8
+}
+alert(foo());
+					    </code></pre>                     
+				       </section>
+							
+				        <section>
+                        <p>
+                            Some <a href="http://www.codewars.com/">CodeWars.com</a> practice problems for JavaScript functions:
+                        </p>
+                        <ul>
+                            <li><a href="http://www.codewars.com/kata/boiled-eggs">Beginner level: Boiled Eggs</a></li>
+                            <li><a href="http://www.codewars.com/kata/return-negative">Beginner level: Return Negative</a></li>
+                            <li><a href="http://www.codewars.com/kata/functional-addition">Slightly harder: Functional Addition</a></li>
+                            <li><a href="http://www.codewars.com/kata/a-function-within-a-function">Slightly harder : Function Within a Function</a></li>
+                            <li><a href="http://www.codewars.com/kata/calculating-with-functions">Intermediate: Calculating with Functions</a></li>
+                        </ul>
+                        </section>
+									
+        <section>
+            <p>Thanks!</p>
+            Code for slides available at: ***githublink***
+            <p><small>Created by Liz Krane (<a href="http://twitter.com/LearningNerd">@LearningNerd</a>) <br>for <strong><a href="http://www.meetup.com/LearnToCodeLA/">Learn to Code LA</a></strong> (<a href="http://twitter.com/LearningNerd">@LearnToCodeLA</a>)</small></p>
+            
+            <p><small>Built with <a href="https://github.com/hakimel/reveal.js">reveal.js</a></small></p>
+        </section>
+        
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
